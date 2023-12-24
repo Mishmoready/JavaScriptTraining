@@ -26,3 +26,10 @@ const intro = {
 console.log("This is me:", intro);
 console.log("I am", intro.firstName);
 console.log("I am", intro.age, "years old");
+
+console.log("Old weight:", intro.bodySize.weight);
+
+intro.bodySizeUpdate(120, 100, 85, 183);
+
+console.log("New Weight:", intro.bodySize.weight);
+console.log("My Height is still:", intro.bodySize.height, "cm");
