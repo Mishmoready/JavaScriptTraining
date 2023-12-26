@@ -1,6 +1,4 @@
-// Creating Classes
-
-class intro {
+class Intro {
   constructor(
     firstName,
     lastName,
@@ -10,7 +8,8 @@ class intro {
     waist,
     goalWeight,
     height,
-    openness
+    openness,
+    dateAcquired
   ) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -22,6 +21,7 @@ class intro {
       currentGoalWeight: goalWeight,
       currentHeight: height,
     };
+    this.dateAcquired = dateAcquired;
     this.openness = openness;
   }
   toggleOpenness(openStatus) {
@@ -33,4 +33,13 @@ class intro {
     this.bodySize.goalWeight = newGoalWeight;
     this.bodySize.height = newHeight;
   }
+  myTime() {
+    let now = new Date();
+    let acquired = new Date(this.dateAcquired);
+    let elapsed = now - acquired;
+    let daysSinceAcquired = Math.floor(elapsed / (1000 * 3600 * 24));
+    return daysSinceAcquired;
+  }
 }
+
+export default Intro;
